@@ -4,8 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/rwestlund/quickbooks-go"
-	"github.com/stretchr/testify/require"
+	"github.com/vlccrew/quickbooks-go"
 )
 
 func TestAuthorizationFlow(t *testing.T) {

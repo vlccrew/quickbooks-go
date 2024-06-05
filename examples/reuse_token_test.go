@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/rwestlund/quickbooks-go"
 	"github.com/stretchr/testify/require"
+
+	"github.com/rwestlund/quickbooks-go"
 )
 
 func TestReuseToken(t *testing.T) {
