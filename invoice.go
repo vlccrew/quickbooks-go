@@ -74,7 +74,7 @@ type AccountBasedExpenseLineDetail struct {
 	TaxAmount  json.Number `json:",omitempty"`
 	// TaxInclusiveAmt json.Number              `json:",omitempty"`
 	// ClassRef        ReferenceType `json:",omitempty"`
-	// TaxCodeRef      ReferenceType `json:",omitempty"`
+	TaxCodeRef ReferenceType `json:",omitempty"`
 	// MarkupInfo MarkupInfo `json:",omitempty"`
 	// BillableStatus BillableStatusEnum       `json:",omitempty"`
 	CustomerRef ReferenceType `json:",omitempty"`
