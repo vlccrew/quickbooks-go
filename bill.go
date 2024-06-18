@@ -6,21 +6,29 @@ import (
 	"strconv"
 )
 
+type GlobalTaxCalculation string
+
+const (
+	TaxInclusive  GlobalTaxCalculation = "TaxInclusive"
+	TaxExclusive  GlobalTaxCalculation = "TaxExcluded"
+	NotApplicable GlobalTaxCalculation = "NotApplicable"
+)
+
 type Bill struct {
-	Id           string        `json:"Id,omitempty"`
-	VendorRef    ReferenceType `json:",omitempty"`
-	Line         []Line
-	SyncToken    string        `json:",omitempty"`
-	CurrencyRef  ReferenceType `json:",omitempty"`
-	TxnDate      Date          `json:",omitempty"`
-	APAccountRef ReferenceType `json:",omitempty"`
-	SalesTermRef ReferenceType `json:",omitempty"`
-	LinkedTxn    []LinkedTxn   `json:",omitempty"`
-	// GlobalTaxCalculation
-	TotalAmt                json.Number `json:",omitempty"`
-	TransactionLocationType string      `json:",omitempty"`
-	DueDate                 Date        `json:",omitempty"`
-	MetaData                MetaData    `json:",omitempty"`
+	Id                      string        `json:"Id,omitempty"`
+	VendorRef               ReferenceType `json:",omitempty"`
+	Line                    []Line
+	SyncToken               string               `json:",omitempty"`
+	CurrencyRef             ReferenceType        `json:",omitempty"`
+	TxnDate                 Date                 `json:",omitempty"`
+	APAccountRef            ReferenceType        `json:",omitempty"`
+	SalesTermRef            ReferenceType        `json:",omitempty"`
+	LinkedTxn               []LinkedTxn          `json:",omitempty"`
+	GlobalTaxCalculation    GlobalTaxCalculation `json:",omitempty"`
+	TotalAmt                json.Number          `json:",omitempty"`
+	TransactionLocationType string               `json:",omitempty"`
+	DueDate                 Date                 `json:",omitempty"`
+	MetaData                MetaData             `json:",omitempty"`
 	DocNumber               string
 	PrivateNote             string        `json:",omitempty"`
 	TxnTaxDetail            TxnTaxDetail  `json:",omitempty"`
